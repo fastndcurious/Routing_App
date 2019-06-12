@@ -7,12 +7,14 @@ Rails.application.routes.draw do
   end
 
   get 'about', to: 'pages#about'
-
   get 'leadgen/advertising/asdf/lead', to: 'pages#contact', as: 'lead'
 
   resources :blogs
   resources :posts
+  get 'posts/*missing', to: 'posts#missing'
+  get 'query/:else/:another_one', to: 'pages#something' #something <=> id
 
   root to: 'pages#home'
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
